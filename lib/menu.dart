@@ -144,13 +144,13 @@ class ItemCard extends StatelessWidget {
     // Tentukan warna berdasarkan nama item
     Color buttonColor;
     if (item.name == "Lihat Daftar Produk") {
-      buttonColor = Colors.orange; // Warna hijau untuk "Lihat Daftar Produk"
+      buttonColor = Colors.orange; 
     } else if (item.name == "Tambah Produk") {
-      buttonColor = Colors.orangeAccent; // Warna biru untuk "Tambah Produk"
+      buttonColor = Colors.orangeAccent; 
     } else if (item.name == "Logout") {
-      buttonColor = Colors.amber; // Warna merah untuk "Logout"
+      buttonColor = Colors.amber;
     } else {
-      buttonColor = Theme.of(context).colorScheme.secondary; // Warna default
+      buttonColor = Theme.of(context).colorScheme.secondary;
     }
 
     return Material(
