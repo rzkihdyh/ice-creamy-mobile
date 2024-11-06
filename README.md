@@ -9,7 +9,6 @@ Perbedaan utama antara keduanya adalah bahwa Stateful widget dapat menyimpan dan
 
 ### 2. Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
 
-Widget yang digunakan adalah stateless widget. Stateless widget adalah widget yang statis, tidak dapat berubah, semua konfigurasinya ditentukan di awal pembuatan.
 - **Scaffold**: Menyediakan struktur dasar halaman, termasuk AppBar dan body.
 - **AppBar**: Menampilkan header aplikasi dengan judul "Ice Creamy."
 - **Padding**: Menambahkan ruang di sekitar Column utama.
