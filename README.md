@@ -1,3 +1,7 @@
+Rizki Hidayatul Laeli
+PBP C
+2306245491
+
 # Tugas 7
 ### 1.Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 
