@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creamy/widgets/left_drawer.dart';
+import 'package:ice_creamy/widgets/product_card.dart';
 
 class MyHomePage extends StatelessWidget {
   final String npm = '2306245491';
@@ -8,7 +10,7 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
   final List<ItemHomepage> items = [
-    ItemHomepage("Lihat Daftar Produk", Icons.shop),
+    ItemHomepage("Lihat Daftar Produk", Icons.icecream),
     ItemHomepage("Tambah Produk", Icons.add),
     ItemHomepage("Logout", Icons.logout),
   ];
@@ -19,16 +21,20 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
+        // Judul aplikasi "Ice Creamy" dengan teks putih dan tebal.
         title: const Text(
           'Ice Creamy',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+      drawer: const LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -40,12 +46,11 @@ class MyHomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                InfoCard(title: 'NPM', content: npm),
-                InfoCard(title: 'Name', content: name),
-                InfoCard(title: 'Class', content: className),
+                InfoCard(title: 'NPM', content: npm, color: const Color.fromARGB(255, 181, 235, 210)),
+                InfoCard(title: 'Name', content: name, color: const Color.fromARGB(255, 181, 235, 210)),
+                InfoCard(title: 'Class', content: className, color: const Color.fromARGB(255, 181, 235, 210)),
               ],
             ),
-
             // Memberikan jarak vertikal 16 unit.
             const SizedBox(height: 16.0),
 
@@ -59,12 +64,14 @@ class MyHomePage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
                     child: Text(
-                      'Welcome to Ice Creamy!',
+                      '🍦 Welcome to Ice Creamy 🍦',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 105, 59, 7),
                         fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
+                        fontSize: 25.0, // Ukuran font lebih besar
+                        color: Color.fromARGB(255, 176, 48, 82),
+                        letterSpacing: 1.5, // Jarak antar huruf
                       ),
+                      textAlign: TextAlign.center, // Teks diatur di tengah
                     ),
                   ),
 
@@ -98,8 +105,9 @@ class InfoCard extends StatelessWidget {
 
   final String title; // Judul kartu.
   final String content; // Isi kartu.
+  final Color color; // Parameter warna untuk card
 
-  const InfoCard({super.key, required this.title, required this.content});
+  const InfoCard({super.key, required this.title, required this.content, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -112,6 +120,10 @@ class InfoCard extends StatelessWidget {
             3.5, // menyesuaikan dengan lebar device yang digunakan.
         padding: const EdgeInsets.all(16.0),
         // Menyusun title dan content secara vertikal.
+        decoration: BoxDecoration(
+          color: color, // Menggunakan warna yang diterima
+          borderRadius: BorderRadius.circular(10), // Memberikan sudut melengkung
+        ),
         child: Column(
           children: [
             Text(
@@ -121,77 +133,6 @@ class InfoCard extends StatelessWidget {
             const SizedBox(height: 8.0),
             Text(content),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class ItemHomepage {
-  final String name;
-  final IconData icon;
-
-  ItemHomepage(this.name, this.icon);
-}
-
-class ItemCard extends StatelessWidget {
-  final ItemHomepage item;
-
-  const ItemCard(this.item, {super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Tentukan warna berdasarkan nama item
-    Color buttonColor;
-    if (item.name == "Lihat Daftar Produk") {
-      buttonColor = Colors.orange; 
-    } else if (item.name == "Tambah Produk") {
-      buttonColor = Colors.orangeAccent; 
-    } else if (item.name == "Logout") {
-      buttonColor = Colors.amber;
-    } else {
-      buttonColor = Theme.of(context).colorScheme.secondary;
-    }
-
-    return Material(
-      color: buttonColor, // Terapkan warna yang sesuai
-      borderRadius: BorderRadius.circular(12),
-      child: InkWell(
-        onTap: () {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content: Text(
-                  "Kamu telah menekan tombol ${item.name}!",
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 89, 89, 7),
-                  ),
-                ),
-                backgroundColor: const Color.fromARGB(255, 209, 215, 130),
-              ),
-            );
-        },
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
-                const Padding(padding: EdgeInsets.all(3)),
-                Text(
-                  item.name,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );

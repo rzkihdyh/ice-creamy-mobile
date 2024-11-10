@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_creamy/menu.dart';
+import 'package:ice_creamy/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,26 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      //MaterialApp adalah widget utama yang mengatur tema, judul, rute, dan halaman awal aplikasi.
+      title: 'Ice Creamy', //Mengatur tema untuk aplikasi ini 
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
+        // Using primaryColor instead of primarySwatch
+        primaryColor: const Color.fromARGB(255, 126, 212, 173),
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.yellow,
-        ).copyWith(secondary: const Color.fromARGB(255, 96, 81, 3)),
+          primarySwatch: Colors.teal, // Set another material color
+        ).copyWith(secondary: const Color.fromARGB(255, 4, 71, 30)),
         useMaterial3: true,
       ),
       home: MyHomePage(),
