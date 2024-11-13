@@ -1,7 +1,8 @@
 Rizki Hidayatul Laeli - PBP C - 2306245491
 
 # Tugas 7
-<details>
+<Tugas7>
+
 ### 1.Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 
 Stateless Widget adalah widget yang tampilannya tetap sama selama aplikasi berjalan. Setelah dibuat, widget ini tidak akan berubah kecuali seluruh widget di-refresh. Stateless widget cocok untuk elemen statis yang tidak perlu berubah, seperti teks, ikon, atau tombol. Contoh stateless widget adalah **Text**, **Icon**, dan **IconButton**.
@@ -40,10 +41,10 @@ Fungsi `setState()` pada **StatefulWidget** digunakan untuk memberi tahu framewo
 Langkah pertama adalah membuat direktori bernama **ice-creamy** pada lokal. Kemudian, generate proyek Flutter melalui terminal dengan perintah `flutter create ice-creamy`. Setelah itu, buat file baru bernama **menu.dart** di dalam direktori `ice-creamy-mobil/lib`. Pindahkan kode yang berisi **class MyHomePage** dan **class _MyHomePageState** ke file **menu.dart**, lalu tambahkan impor `ice-creamy-mobil/menu.dart` agar program dapat mengenali **class MyHomePage**. Selanjutnya, ubah widget pada **menu.dart** menjadi **stateless widget** dan buat komponen **InfoCard** serta **Button Card** dengan ikon di **menu.dart**. Di **main.dart**, sesuaikan tema warna aplikasi dan tambahkan variabel **color** pada **ItemHomepage**, serta atur warna pada masing-masing tombol. 
 
 Langkah terakhir adalah membuat repositori di GitHub dan menghubungkannya dengan proyek lokal. Setelah membuat repositori baru di GitHub, buka terminal di direktori proyek lokal dan jalankan perintah `git init` untuk inisialisasi Git. Selanjutnya, tambahkan repositori GitHub sebagai remote dengan perintah `git remote add origin`. Lalu, add, commit dan push untuk menyimpan perubahan.
-</details>
+</Tugas7>
 
 # Tugas 8
-<details>
+<Tugas8>
 
 ### 1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
 
@@ -215,10 +216,10 @@ ListTile(
 
 Penjelasan:
 Dengan `pushReplacement`, halaman aktif digantikan oleh halaman tujuan baru (`MyHomePage` atau `ProductEntryFormPage`). Hal ini memastikan bahwa pengguna tidak bisa kembali ke halaman yang sebelumnya (misalnya, dari `ProductEntryFormPage` ke halaman lain di drawer) karena halaman lama dihapus dari *stack*.
-</details>
+</Tugas8>
 
 # Tugas 9
-<details>
+<Tugas9>
 
 ### 1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
 
@@ -231,4 +232,4 @@ Dengan `pushReplacement`, halaman aktif digantikan oleh halaman tujuan baru (`My
 ### 5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
 
 ### 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
-</details>
+</Tugas9>
