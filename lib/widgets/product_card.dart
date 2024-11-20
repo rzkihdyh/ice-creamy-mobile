@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ice_creamy/screens/list_moodentry.dart';
+import 'package:ice_creamy/screens/login.dart';
 import 'package:ice_creamy/screens/productentry_form.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
@@ -11,6 +14,7 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     Color buttonColor;
     if (item.name == "Lihat Daftar Produk") {
       buttonColor = const Color.fromARGB(255, 215, 108, 130); 
@@ -56,30 +60,30 @@ class ItemCard extends StatelessWidget {
               )
             );
           }
-            // else if (item.name == "Logout") {
-            //     final response = await request.logout(
-            //         // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-            //         "http://127.0.0.1:8000/auth/logout/");
-            //     String message = response["message"];
-            //     if (context.mounted) {
-            //         if (response['status']) {
-            //             String uname = response["username"];
-            //             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            //                 content: Text("$message Sampai jumpa, $uname."),
-            //             ));
-            //             Navigator.pushReplacement(
-            //                 context,
-            //                 MaterialPageRoute(builder: (context) => const LoginPage()),
-            //             );
-            //         } else {
-            //             ScaffoldMessenger.of(context).showSnackBar(
-            //                 SnackBar(
-            //                     content: Text(message),
-            //                 ),
-            //             );
-            //         }
-            //     }
-            // }
+            else if (item.name == "Logout") {
+                final response = await request.logout(
+                    // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
+                    "http://127.0.0.1:8000/auth/logout/");
+                String message = response["message"];
+                if (context.mounted) {
+                    if (response['status']) {
+                        String uname = response["username"];
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("$message Sampai jumpa, $uname."),
+                        ));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => const LoginPage()),
+                        );
+                    } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                                content: Text(message),
+                            ),
+                        );
+                    }
+                }
+            }
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
