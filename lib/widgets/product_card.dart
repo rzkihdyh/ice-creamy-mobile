@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_creamy/screens/list_moodentry.dart';
+import 'package:ice_creamy/screens/list_productentry.dart';
 import 'package:ice_creamy/screens/login.dart';
 import 'package:ice_creamy/screens/productentry_form.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';

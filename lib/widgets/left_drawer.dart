@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:ice_creamy/models/product_entry.dart';
-import 'package:ice_creamy/screens/list_moodentry.dart';
+import 'package:ice_creamy/screens/list_productentry.dart';
 import 'package:ice_creamy/screens/menu.dart';
 import 'package:ice_creamy/screens/productentry_form.dart';
 

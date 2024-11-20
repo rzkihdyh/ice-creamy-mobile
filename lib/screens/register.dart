@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ice_creamy/screens/login.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
@@ -148,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      minimumSize: const Size(double.infinity, 50),
+                      minimumSize: Size(double.infinity, 50),
                       backgroundColor: Theme.of(context).colorScheme.primary,
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                     ),
