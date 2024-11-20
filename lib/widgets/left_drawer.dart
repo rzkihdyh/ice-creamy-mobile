@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_creamy/models/product_entry.dart';
+//import 'package:ice_creamy/models/product_entry.dart';
 import 'package:ice_creamy/screens/list_moodentry.dart';
 import 'package:ice_creamy/screens/menu.dart';
 import 'package:ice_creamy/screens/productentry_form.dart';
@@ -62,7 +62,7 @@ class LeftDrawer extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductEntryFormPage(),
+                      builder: (context) => const ProductEntryFormPage(),
                     ));
               },
             ),
@@ -74,7 +74,7 @@ class LeftDrawer extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductEntryPage(),
+                      builder: (context) => const ProductEntryPage(),
                     ));
               },
             ),
