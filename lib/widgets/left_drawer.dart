@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creamy/models/product_entry.dart';
+import 'package:ice_creamy/screens/list_moodentry.dart';
 import 'package:ice_creamy/screens/menu.dart';
 import 'package:ice_creamy/screens/productentry_form.dart';
 
@@ -61,6 +63,18 @@ class LeftDrawer extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ProductEntryFormPage(),
+                    ));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.icecream_sharp),
+              title: const Text('Daftar Produk'),
+              // Bagian redirection ke ProductEntryFormPage
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductEntryPage(),
                     ));
               },
             ),
